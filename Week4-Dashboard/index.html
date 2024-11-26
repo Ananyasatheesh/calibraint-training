@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="mobile.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" /> -->
+
+  </head>
+  <body>
+    <div class="main-container h-screen">
+      <div class="all-nav">
+        <header style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px">
+          <div
+            class="header-container text-center sticky flex justify-between h-10 pl-4 pr-4"
+          >
+            <div class="logo text-center flex">
+              <!-- <i class="bar fa-solid fa-bars mt-3 hidden me-3" onclick="mobileMenu()"></i> -->
+              <p style="margin-top: 12px;">nago</p>
+            </div>
+            <div class="ecommerce">
+              <p style="margin-top: 12px;">
+                Ecommerce
+              </p>
+            </div>
+            <div class="header-icons flex">
+              <div class="header-icons-without-profile">
+                <i class="ps-5 mt-3 fa-regular fa-flag"></i>
+                <i class="ps-5 mt-3 fa-solid fa-expand"></i>
+                <i class="ps-5 mt-3 fa-solid fa-magnifying-glass"></i>
+                <i class="ps-5 mt-3 fa-solid fa-cube"></i>
+                <i class="ps-5 mt-3 fa-regular fa-message"></i>
+                <i class="ps-5 mt-3 fa-regular fa-bell"></i>
+                <i class="ps-5 mt-3 fa-solid fa-inbox"></i>
+                <i class="ps-5 mt-3 fa-solid fa-gear"></i>
+              </div>
+              <button class="profile flex justify-end">
+                <p style="margin-top: 12px; margin-right: 3px">
+                  Roxana Roussell
+                </p>
+                <i class="fa-regular fa-user mt-3"></i>
+              </button>
+            </div>
+          </div>
+        </header>
+        
+
+        <div class="sidebar fixed" id="sidebar">
+          <div class="icon-menu">
+            <button data-dropdown-toggle="dropdownAvatar" id="dropdownUserAvatarButton">
+            <i
+              class="fa-solid fa-cart-shopping text-center bg-blue-400"
+              onclick="toggleMenu('menu1')"
+            ></i>
+            </button>
+            <i
+              class="fa-solid fa-wave-square"
+              onclick="toggleMenu('menu2')"
+            ></i>
+            <i class="fa-solid fa-suitcase" onclick="toggleMenu('menu3')"></i>
+            <i class="fa-solid fa-globe" onclick="toggleMenu('menu4')"></i>
+            <i class="fa-solid fa-user-group" onclick="toggleMenu('menu5')"></i>
+            <i
+              class="fa-solid fa-layer-group"
+              onclick="toggleMenu('menu6')"
+            ></i>
+            <i
+              class="fa-solid fa-pen-to-square"
+              onclick="toggleMenu('menu7')"
+            ></i>
+            <i class="fa-solid fa-gift" onclick="toggleMenu('menu8')"></i>
+            <i class="fa-regular fa-paste" onclick="toggleMenu('menu9')"></i>
+          </div>
+          <div class="menu" id="menu1">
+            <ul>
+              <div class="e-commerce flex text-gray-400">
+                <i class="fa-solid fa-cart-shopping mt-4 me-3"></i>
+                <li>E-Commerce</li>
+              </div>
+              <li class="bg-blue-400" onclick="displayContent()">Dashboard</li>
+              <li>Orders</li>
+              <li>Product List</li>
+              <li>Product Grid</li>
+              <li>Product Details</li>
+              <div class="summary">
+                <p class="text-gray-400">Summary</p>
+                <div class="total-orders-card flex h-12 mb-3">
+                  <!-- <p>Order img</p> -->
+                  <i
+                    class="fa-solid fa-signal text-white bg-orange-400 p-4 rounded-lg text-xs h-12 text-center me-3"
+                  ></i>
+                  <div class="order-content">
+                    <p class="text-wrap">Total orders</p>
+                    <p>$50.958</p>
+                  </div>
+                </div>
+                <div class="new-products flex h-12 mb-3">
+                  <i
+                    class="fa-regular fa-trash-can text-white bg-green-500 p-4 h-12 rounded-lg text-xs text-center me-3 mt-4"
+                  ></i>
+                  <div class="product-content mt-3">
+                    <p class="text-wrap">New Products</p>
+                    <p>100</p>
+                  </div>
+                </div>
+                <div class="refund flex h-12">
+                  <i
+                    class="fa-solid fa-rotate text-white bg-red-500 p-4 h-12 rounded-lg text-xs text-center me-3 mt-4"
+                  ></i>
+                  <div class="refund-content mt-3">
+                    <p>Refund</p>
+                    <p>5.301</p>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="cards-all "
+        style="position: absolute; top: 8%; left: 30%"
+        id="cards-all"
+      >
+        <div class="card-header flex text-gray-500">
+          <i class="fa-solid fa-house" style="padding-right: 5px"></i>
+          <p style="padding-right: 5px">E-commerce</p>
+          <p style="padding-right: 5px">></p>
+          <p style="padding-right: 5px">Dashboard</p>
+        </div>
+        <br />
+        <div class="cards flex" id="cards">
+          <div
+            class="total-sales"
+            style="
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              height: 150px;
+              width: 350px;
+              background-color: white;
+              padding: 20px;
+              margin-right: 15px;
+            "
+          >
+            <div class="total-sales-card flex justify-between">
+              <p class="text-gray-500">Total Sales</p>
+              <i
+                class="fa-solid fa-signal"
+                style="
+                  padding: 10px;
+                  background-color: rgb(16, 204, 16);
+                  border-radius: 50%;
+                  margin: 10px;
+                "
+              ></i>
+            </div>
+            <p
+            class="amt"
+              style="
+                font-weight: 900;
+                font-size: 30px;
+                margin-top: -10px;
+                margin-bottom: 10px;
+              "
+            >
+              $58,000
+            </p>
+            <div class="total-sales-sensus flex">
+              <i class="fa-solid fa-arrow-up text-green-400"></i>
+              <p class="text-green-400">5.1%</p>
+              <p>Up from past week</p>
+            </div>
+          </div>
+          <div
+            class="total-orders"
+            style="
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              height: 150px;
+              width: 350px;
+              background-color: white;
+              padding: 20px;
+              margin-right: 15px;
+            "
+          >
+            <div class="total-sales-card flex justify-between">
+              <p class="text-gray-500">Total Orders</p>
+              <i
+                class="fa-solid fa-gift"
+                style="
+                  padding: 10px;
+                  background-color: skyblue;
+                  border-radius: 50%;
+                  margin: 10px;
+                "
+              ></i>
+            </div>
+            <p  class="amt"
+              style="
+                font-weight: 900;
+                font-size: 30px;
+                margin-top: -10px;
+                margin-bottom: 10px;
+              "
+            >
+              9,621
+            </p>
+            <div class="total-sales-sensus flex">
+              <i class="fa-solid fa-arrow-down text-red-400"></i>
+              <p class="text-red-400">2.6%</p>
+              <p>Down from yesterday</p>
+            </div>
+          </div>
+          <div
+            class="total-pending"
+            style="
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              height: 150px;
+              width: 350px;
+              background-color: white;
+              padding: 20px;
+              margin-right: 15px;
+            "
+          >
+            <div class="total-sales-card flex justify-between">
+              <p class="text-gray-500">Total Pending</p>
+              <i
+                class="fa-solid fa-rotate"
+                style="
+                  padding: 10px;
+                  background-color: rgb(244, 55, 55);
+                  border-radius: 50%;
+                  margin: 10px;
+                "
+              ></i>
+            </div>
+            <p  class="amt"
+              style="
+                font-weight: 900;
+                font-size: 30px;
+                margin-top: -10px;
+                margin-bottom: 10px;
+              "
+            >
+              2,217
+            </p>
+            <div class="total-sales-sensus flex">
+              <i class="fa-solid fa-arrow-up text-green-400"></i>
+              <p class="text-green-400">1.9%</p>
+              <p>Up from yesterday</p>
+            </div>
+          </div>
+        </div>
+        <br />
+
+        <div class="bar-pie-chart flex" id="bar-pie-chart">
+          <div
+            class="bar-graph w-[60%] h-[100%]"
+            style="
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              padding: 20px 20px 0 5px;
+            "
+            id="bar-graph"
+          >
+            <p class="text-gray-500">Revenue</p>
+
+            <div class="bar-content flex justify-start mt-3">
+              <div class="mr-20">
+                <p class="text-gray-500 bar-font">This Week</p>
+                <p class="text-3xl font-bold">
+                  $235 <span class="text-green-500 text-xl">↑ 1.9%</span>
+                </p>
+              </div>
+              <div>
+                <p class="text-gray-500 bar-font">Last Week</p>
+                <p class="text-3xl font-bold">
+                  $5,180 <span class="text-red-500 text-xl">↓ 1.9%</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Line chart canvas -->
+            <div class="bg-white shadow-md rounded h-80">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+          <div
+            class="pie-chart w-[40%] h-[50%]"
+            style="
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              display: grid;
+              padding: 10px 20px 0 20px;
+            "
+          >
+            <div class="pie-header flex justify-between">
+              <p class="text-gray-400">Hot Products</p>
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+            <div class="chart-container w-[200px] ml-[25%]">
+              <canvas class="my-chart"></canvas>
+            </div>
+
+            <div class="pie-details h-[20%]">
+              <ul>
+                <div class="flex pb-4">
+                  <i
+                    class="fa-solid fa-circle text-blue-600 me-5"
+                    style="font-size: 10px; margin-top: 7px"
+                  ></i>
+                  <p>Iphone</p>
+                </div>
+                <div class="flex pb-4">
+                  <i
+                    class="fa-solid fa-circle text-red-600 me-5"
+                    style="font-size: 10px; margin-top: 7px"
+                  ></i>
+                  <p>Samsung</p>
+                </div>
+                <div class="flex pb-4">
+                  <i
+                    class="fa-solid fa-circle text-orange-400 me-5"
+                    style="font-size: 10px; margin-top: 7px"
+                  ></i>
+                  <p>Huawei</p>
+                </div>
+                <div class="flex pb-4">
+                  <i
+                    class="fa-solid fa-circle text-yellow-400 me-5"
+                    style="font-size: 10px; margin-top: 7px"
+                  ></i>
+                  <p>General Mobile</p>
+                </div>
+                <div class="flex pb-4">
+                  <i
+                    class="fa-solid fa-circle text-blue-400 me-5"
+                    style="font-size: 10px; margin-top: 7px"
+                  ></i>
+                  <p>Xiaomi</p>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- mobile -->
+        <footer class="hidden">
+          <i class="fa-regular fa-flag"></i>
+          <i class="fa-solid fa-expand"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-cube"></i>
+          <i class="fa-regular fa-message"></i>
+          <i class="fa-regular fa-bell"></i>
+          <i class="fa-solid fa-inbox"></i>
+          <i class="fa-solid fa-gear"></i>
+        </footer>
+    </div>
+    <script src="chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script> -->
+
+  </body>
+</html>

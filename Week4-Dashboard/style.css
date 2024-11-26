@@ -1,0 +1,307 @@
+/* body{
+  overflow: hidden;
+} */
+
+@media screen and (max-width: 700px) {
+  header p {
+    margin-top: 5px;
+    font-size: 13px;
+  }
+  .header-container {
+    justify-content: space-between;
+  }
+  .header-icons-without-profile {
+    display: none !important;
+  }
+  .profile {
+    left: 0px !important;
+  }
+  footer {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-evenly !important;
+    position: absolute !important;
+    bottom: 0 !important;
+  }
+  .bar {
+    display: block !important;
+  }
+  .sidebar {
+    /* display: none !important; */
+    width: 30% !important;
+  }
+  .sidebar .icon-menu {
+    height: 100% !important;
+    padding: 0px !important;
+    /* display: inline-flex; */
+  }
+  .sidebar .icon-menu i {
+    font-size: 10px !important;
+  }
+  .cards {
+    display: block !important;
+    /* display: grid !important; */
+    gap: 10px;
+    left: 0px !important;
+    position: relative;
+    justify-content: space-between !important;
+  }
+  .menu {
+    padding: 0 0 0 5px !important;
+    width: 71% !important;
+    /* z-index: 1 !important; */
+  }
+  .menu .e-commerce li {
+    font-size: 8.5px !important;
+    margin-left: 0px;
+  }
+  .summary p {
+    font-size: 10px !important;
+        text-wrap: nowrap;
+
+  }
+  .menu ul li {
+    font-size: 11px !important;
+    padding: 5px !important;
+    text-wrap: nowrap;
+  }
+  .summary i {
+    padding: 0 2px 0 5px !important;
+    font-size: 8px !important;
+    height: 35px;
+    border-radius: 5%;
+  }
+  .summary > div {
+    font-size: 8px !important;
+  }
+  .cards-all {
+    display: none;
+    /* left: 20% !important; */
+    width: 80% !important;
+  }
+  .cards {
+    width: 90% !important;
+  }
+  .card-header {
+    position: relative;
+  }
+  .card-header p {
+    font-size: 11px !important;
+  }
+  .total-sales,
+  .total-orders,
+  .total-pending {
+    height: 150px !important;
+    width: 100% !important;
+    margin-bottom: 20px;
+    font-size: 10px;
+  }
+  .total-orders{
+    padding: 20px !important;
+  }
+  .total-sales-sensus{
+    justify-content: space-evenly !important;
+    font-size: 12px;
+  }
+  .total-sales-sensus p{
+    font-size: 1em !important;
+  }
+  .total-sales-card p,
+  /* .total-orders-card p, */
+  .total-pending-card p{
+    font-size: 12px !important;
+  }
+  .amt {
+    font-size: 20px !important;
+  }
+  .bar-pie-chart {
+    display: block !important;
+    width: 100% !important;
+    position: relative;
+  }
+  .bar-graph {
+    width: 90% !important;
+    margin-bottom: 15px !important;
+  }
+  .bar-graph .bar-content {
+    justify-content: start;
+  }
+  .bar-graph .bar-content div {
+    margin-right: 0px;
+  }
+  .bar-graph .bar-content p {
+    font-size: 14px !important;
+  }
+  #myChart {
+    height: 250px !important;
+  }
+  .pie-chart {
+    width: 90% !important;
+  }
+  .chart-container {
+    margin-left: 0px !important;
+    justify-self: center !important;
+    width: 100px !important;
+  }
+  footer {
+    bottom: 0px !important;
+    position: fixed !important;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+  /* header{
+    position: fixed !important;
+   }  */
+  /* .main-container{
+    display: grid !important;
+  } */
+
+  .sidebar li {
+    font-size: 12px !important;
+  }
+  .icon-menu i {
+    font-size: 15px !important;
+  }
+  .menu {
+    padding: 5px !important;
+  }
+  .menu ul {
+    display: none;
+  }
+  .cards-all {
+    /* left:35% !important; */
+    padding: 20px 0 0 35px;
+    width: 74% !important;
+  }
+  .cards {
+    display: grid !important;
+    width: 90% !important;
+    align-content: space-around;
+    max-width: 100% !important;
+
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 10px;
+    /* justify-content: center; */
+  }
+  .total-sales,
+  .total-orders,
+  .total-pending {
+    margin-bottom: 20px;
+    /* margin-right: 0px !important; */
+    width: 100% !important;
+    height: 200px !important;
+  }
+  .summary i {
+    padding: 10px;
+    padding-top: 15px;
+    font-size: 10px;
+  }
+  .order-content,
+  .product-content,
+  .refund-content {
+    font-size: 12px;
+  }
+  .bar-pie-chart {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .bar-graph,
+  .pie-chart {
+    width: 90% !important;
+    max-width: 100% !important;
+  }
+  #myChart {
+    height: 90% !important;
+  }
+  .pie-chart {
+    margin-top: 20px;
+    height: 100% !important;
+    margin-bottom: 20px;
+  }
+  .chart-container{
+    height: 200px ;
+  }
+}
+/* @media screen and(min-width:1025px) {
+  .cards-all {
+    left: 30% !important;
+  }
+  .cards {
+    left: 40% !important;
+  }
+} */
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 45%;
+  margin-left: 5px;
+  /* background-color: blueviolet; */
+}
+.icon-menu {
+  /* width: 50px; */
+  /* border-right: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+  /* border-right: 0.5px solid grey; */
+}
+.icon-menu i {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 15px;
+  /* padding-bottom: 30px; */
+  text-align: center;
+  border-radius: 5px;
+}
+.icon-menu i:hover {
+  background-color: #02b2f8;
+}
+.menu {
+  padding-left: 20px;
+  width: 45%;
+  /* border-right: 0.5px solid grey; */
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  padding-right: 20px;
+  /* background-color: aqua; */
+  /* border-right: 1px solid black; */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0 30px 30px */
+}
+
+.menu ul {
+  list-style-type: none;
+  padding-top: 0;
+  font-size: 14px;
+  display: none;
+}
+
+.menu ul li {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.menu ul li:hover {
+  background-color: #02b2f8;
+}
+.cards-all {
+  display: none;
+}
+#myChart {
+  rotate: 0.02deg;
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+  .bar-content p {
+    font-size: 16px;
+  }
+  .bar-pie-chart {
+    width: 100% !important;
+  }
+  .bar-graph {
+    width: 96% !important;
+  }
+}
