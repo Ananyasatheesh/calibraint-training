@@ -1,0 +1,27 @@
+day 1 
+--------------------------------
+meta tag - utf
+single page, multi page application
+margin, padding, space, gap
+border - t,r,b,l
+bordr radius - focus on edged
+display:none (parent, child)
+if a child div is clicked, will parent be clicked? and vice versa
+how to stop event affecting parent when child is clicked? - e.stoppropogation()
+onkeyPress - events
+
+day 2
+----------------------------------------
+agile method
+git branch
+git init
+git remote -v (to check whether it is connected to vscode)
+copy the code->http code
+git remote add origin (that code)
+git checkout -b Ananya-milestone1
+
+dev
+test
+staged
+prod
+

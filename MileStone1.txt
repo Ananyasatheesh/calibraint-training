@@ -1,0 +1,90 @@
+MILESTONE 1
+- Internet and how it works
+- HTTP
+- Domain Name
+- Hosting
+- DNS and how it works
+- Browsers and how they work
+
+1.	Internet and how it works
+•	Network – Group of devices that are able to communicate with each other.
+•	Computer network – Group of devices especially computer related devices that are connected and are able to communicate with each other.S
+•	Internet – i) Network of interconnected computer networks that communicate using protocol. (Set of rules)
+   ii) Connection of many networks that enables communication via wires, cables, radio waves.
+•	It works mainly on protocols and packets.
+•	Protocols – Set of rules to be followed.
+o	IP (Internet Protocol) – Sending packets between devices of same network
+o	TCP – Used to check and arrange packets in order.
+o	HTTP – interact with websites. Also defines how requests are made by client and how response is given by server.
+•	Packets – It is a small segment of message. It has both data (raw data) and information (processed data).
+o	It contains header. Header has information about the packet. It has source, destination.
+o	Packets are sent to destination with the help of router and switch.
+o	Switch – connects devices of same network.
+o	Router – Directs packets between same network and different networks.
+o	Packets are sent across devices with help of packet switching.
+
+2.	HTTP (HyperText Transfer Protocol):
+•	It is a protocol used to transfer data between clients and server.
+•	Two main functions are request and response.
+o	Request – when a user wants some data and clicks the URL, request is sent to server for accessing the information.
+o	Response – Once the server process the request, the response is sent to client.
+•	HTTP has 4 methods – GET, POST, PUT, DELETE
+o	GET – Requests the data from server
+o	POST – Submits data to server. Ex- form filling.
+o	PUT – Updates existing data.
+o	DELETE – Removes data from the server.
+•	HTTP is stateless. It doesn’t remember the previous request by the server. 
+•	Advancement of HTTP is HTTPS - HyperText Transfer Protocol Secure. It adds a security layer.
+
+3.	Domain Name:
+•	It is a string of text that is mapped to numeric IP address.
+•	Domain name makes us not to remember the complex IP address.
+•	Domain name must be registered with the help of domain registrars.
+•	Structure of domain name: Ex – https://www.domain-name.com. Every part is broken into parts with dots.
+o	https – protocol
+o	www - machine or host name
+o	domain-name: domain name to be searched to get information
+o	com – Top-Level-Domain(TDL)
+4.	Hosting:
+•	Web hosting – service to make website publically available for the user. Stores and manages files, sites, applications on a server which is associated with the particular domain name.
+•	There are 8 types of web hosting
+o	Free hosting – Non-paid web hosting service. Ex: Hostinger.
+o	Shared/ Virtual hosting – Many websites resides on 1 web server. It comes with a hosting plan. It can also slow down the server.
+o	Dedicated hosting – Companies rent entire server form the hosting company for their use. Used for larger applications.
+o	Co-located hosting – Allows to place own web server on the space of service provider. Server is provided by the company. Physical needs like power, cooling are provided by hosting company. Ex: AWS.
+o	VPS (Virtual Private Sector) hosting – Physical server is split into multiple virtual server.
+o	Cloud hosting – involves hosting of multiple virtual server.
+o	Managed hosting – Refers to managed services to specific applications like administration, security, backup
+o	Reseller hosting – Purchase hosting servers and resell them to others.
+ 
+
+
+
+
+
+5.	DNS and how it works
+•	DNS translates domain name into IP address.
+•	DNS query/ DNS request – Information sent from user’s device (DNS client) to DNS server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+•	Caching – done to increase the speed of retrieving information. Stores the IP address in the server for a while to retrieve it in an easy manner.
+
+6.	Browser and how it works:
+•	It is a platform to get information.
+•	Web browser is an interface between server and clients. It requests documents and services from the server.
+•	Web browsers use the information provided by DNS to fetch and display the content.
+•	It works as a compiler to render HTML.
+•	When the browser received data from the server, it is rendered in HTML to user-readable form and, information is displayed on the device screen.
+•	Website cookies - When we visit any website over the internet our web browser stores information about us in small files called cookies. Cookies are designed to remember stateful information about our browsing history.
