@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      button {
+        display: block;
+        width: 10rem;
+        height: 2rem;
+        margin: auto;
+      }
+      :modal {
+        background-color: beige;
+        border: 2px solid burlywood;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <i
+      class="fa-solid fa-minus plus"
+      style="margin-right: 5px"
+      onclick="button1()"
+    ></i>
+    <span
+      id="cart-value"
+      style="
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        margin-right: 5px;
+      "
+      >0</span
+    >
+    <i class="fa-solid fa-plus plus" onclick="button2()"></i>
+    <button id="showCart" onclick="addedCart()">Add to cart</button>
+    <dialog id="addCartDialog">
+      <form action="" method="dialog">
+        <p>Do you want to add <span id="itemNumber">0</span> items in cart?</p>
+        <button onclick="yesAdded()">Yes</button>
+        <button>No</button>
+      </form>
+    </dialog>
+    <span id="noOfItems">0</span>
+  </body>
+  <script>
+    var x = 0;
+    var total = 0;
+    function button1() {
+      if (x > 0) {
+        x--;
+        document.getElementById("cart-value").innerHTML = x;
+      }
+    }
+
+    function button2() {
+      x++;
+      document.getElementById("cart-value").innerHTML = x;
+      // if(yesAdded){
+      //   const cartValue = document.getElementById("cart-value").textContent;
+      //   const noOfItems = document.getElementById("noOfItems").textContent;
+      //   total = cartValue - noOfItems;
+      //   // console.log(cartValue);
+      //   // console.log(noOfItems);
+      // }
+    }
+
+    function addedCart() {
+      const cartValue = parseInt(document.getElementById("cart-value").textContent);
+      const itemNumber = document.getElementById("itemNumber").textContent;
+      document.getElementById("itemNumber").textContent=cartValue;
+      const dialogForm = document.getElementById("addCartDialog");
+      dialogForm.showModal();
+    }
+
+    function yesAdded(){
+      const noOfItemsElement = document.getElementById("noOfItems");
+      const noOfItems = parseInt(noOfItemsElement.textContent);
+      const cartValue = parseInt(document.getElementById("cart-value").textContent);
+      const itemNumber = parseInt(document.getElementById("itemNumber").textContent);
+      noOfItemsElement.textContent = noOfItems + itemNumber; // Update total items
+      total = noOfItemsElement.textContent; // Update total with new noOfItems
+    }
+
+
+  </script>
+</html>
